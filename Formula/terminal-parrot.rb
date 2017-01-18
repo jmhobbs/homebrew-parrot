@@ -1,8 +1,8 @@
 class TerminalParrot < Formula
   desc "Party Parrot for your terminal"
   homepage "http://cultofthepartyparrot.com/"
-  url "https://github.com/jmhobbs/terminal-parrot/archive/1.0.1.tar.gz"
-  sha256 "11377c31e14d21f40a6d307dd14356642e88113a2a540c7d1160baca9dd07f56"
+  url "https://github.com/jmhobbs/terminal-parrot/archive/1.1.0.tar.gz"
+  sha256 "beba7a1fb643b72e3d2f23f5371936828653e60c1bb1339cf732026e15b8370d"
 
   depends_on "go" => :build
 
