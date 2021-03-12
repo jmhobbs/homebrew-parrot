@@ -1,24 +1,16 @@
 class TerminalParrot < Formula
   desc "Party Parrot for your terminal"
-  homepage "http://cultofthepartyparrot.com/"
-  url "https://github.com/jmhobbs/terminal-parrot/archive/1.1.0.tar.gz"
-  sha256 "beba7a1fb643b72e3d2f23f5371936828653e60c1bb1339cf732026e15b8370d"
+  homepage "https://cultofthepartyparrot.com/"
+  url "https://github.com/jmhobbs/terminal-parrot/archive/1.1.1.tar.gz"
+  sha256 "93acae68396c8cb9e7a7ef4911503f03656e427b5791f4c2e5c9b3f8e56dce8d"
 
   depends_on "go" => :build
 
   def install
-    gopath = buildpath/"gopath"
-
-    ENV["GOPATH"] = gopath
-    ENV.prepend_create_path "PATH", gopath/"bin"
-
-    system "go", "get", "-u", "github.com/nsf/termbox-go"
-    system "go", "build", "-o", "parrot", "parrot.go", "draw.go", "data.go"
-
-    bin.install "parrot"
+    system "go", "build", "-o", bin/"parrot", "."
   end
 
   test do
-    system "#{bin}/parrot", "-loops", "1"
+    system bin/"parrot", "-loops", "1"
   end
 end
