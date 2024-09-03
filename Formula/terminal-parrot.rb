@@ -9,6 +9,9 @@ class TerminalParrot < Formula
   def install
     system "go", "build", "-o", bin/"parrot", "."
     pkgetc.install Dir["animations/*"]
+    ohai "Additional animations can be installed in #{pkgetc}/animations"
+    ohai "The command installed is `parrot`"
+    ohai "PARTY ON!"
   end
 
   test do
